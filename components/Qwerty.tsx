@@ -1,7 +1,17 @@
 import { observer } from 'mobx-react-lite'
 
-export default observer(function Querty({ store }) {
-  const qwerty = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+type StoreType = {
+  exactGuesses: string[];
+  inexactGuesses: string[];
+  allGuesses: string[];
+};
+
+export default observer(function Querty({ store }: { store: StoreType }) {
+  const qwerty = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+
+
+// export default observer(function Querty({ store }) {
+//   const qwerty = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
   return (
     <div>
       {qwerty.map((row) => (
