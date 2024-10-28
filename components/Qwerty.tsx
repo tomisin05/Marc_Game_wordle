@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 type StoreType = {
   exactGuesses: string[];
   inexactGuesses: string[];
-  allGuesses: string[];
+  allSubmittedLetters: string[];
 };
 
 export default observer(function Querty({ store }: { store: StoreType }) {
@@ -21,7 +21,7 @@ export default observer(function Querty({ store }: { store: StoreType }) {
               ? 'bg-green-400'
               : store.inexactGuesses.includes(char)
               ? 'bg-yellow-400'
-              : store.allGuesses.includes(char)
+              : store.allSubmittedLetters.includes(char)
               ? 'bg-gray-400'
               : 'bg-gray-200'
             return (
